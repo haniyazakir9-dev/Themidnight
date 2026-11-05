@@ -1,0 +1,357 @@
+/* ==========================================================================
+   THE MIDNIGHT LIBRARY - STYLESHEET
+   Aesthetic: Dark Academia (Vintage Library, Rich Mahogany, Antique Gold, Parchment)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Palette: Dark Academia Noir & Antique Gold */
+  --bg-primary: #0d0a08;
+  --bg-surface: #140f0c;
+  --bg-card: #1c1511;
+  --bg-elevated: #241c16;
+
+  --gold-primary: #d4af37;
+  --gold-light: #f5e28e;
+  --gold-muted: #c5a059;
+  --gold-dark: #8c733e;
+  --gold-border: rgba(212, 175, 55, 0.28);
+
+  --text-parchment: #f5eedc;
+  --text-cream: #eae0cc;
+  --text-muted: #a08f75;
+  --text-dim: #756855;
+
+  --wood-dark: #1b120c;
+  --wood-mid: #2c1d14;
+  --wood-light: #4a3224;
+
+  --wax-red: #6d1b24;
+  --wax-seal-border: #992835;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-classic: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --font-decorative: 'Cinzel Decorative', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Base Reset & Core Typography */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-parchment);
+  font-family: var(--font-sans);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(109, 27, 36, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 90% 70%, rgba(27, 44, 34, 0.06) 0%, transparent 50%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Atmospheric Ambient Canvas */
+#ambience-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+/* Custom Antique Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: #3a2b1f;
+  border-radius: 4px;
+  border: 1px solid var(--gold-border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+}
+
+/* Typography Utility Classes */
+.font-display {
+  font-family: var(--font-display);
+}
+.font-decorative {
+  font-family: var(--font-decorative);
+}
+.font-classic {
+  font-family: var(--font-classic);
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Book Cover 3D Depth & Spine Effects */
+.book-cover-wrap {
+  position: relative;
+  box-shadow: 
+    -4px 4px 14px rgba(0, 0, 0, 0.6),
+    inset 4px 0 6px rgba(255, 255, 255, 0.06),
+    inset -4px 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.book-spine-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 8px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Gold Foil Glimmer Gradient */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fff2be 0%, #d4af37 50%, #aa842c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-color: var(--gold-border);
+}
+
+/* Reading Journal: Antique Parchment Styling */
+.parchment-card {
+  background-color: #f4ebd9;
+  color: #2b1f16;
+  background-image: 
+    radial-gradient(circle at 100% 100%, rgba(138, 114, 81, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 0% 0%, rgba(138, 114, 81, 0.15) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(165, 142, 107, 0.15) 28px);
+  border: 1px solid #d4c2a5;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 0 40px rgba(181, 155, 119, 0.25);
+  position: relative;
+}
+
+/* Wax Seal Stamp */
+.wax-seal {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle at 35% 35%, #9e2330 0%, #5e1119 75%, #3c090e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  background: rgba(8, 6, 5, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@keyframes candleFlicker {
+  0%, 100% { opacity: 0.95; filter: drop-shadow(0 0 12px rgba(245, 226, 142, 0.3)); }
+  50% { opacity: 0.8; filter: drop-shadow(0 0 8px rgba(245, 226, 142, 0.2)); }
+}
+
+.candle-glow {
+  animation: candleFlicker 3s infinite ease-in-out;
+}
+
+/* Wooden Shelf Realistic Depth */
+.shelf-ledge {
+  background: linear-gradient(
+    180deg,
+    #533928 0%,
+    #3b2619 30%,
+    #25170d 85%,
+    #130a05 100%
+  );
+  box-shadow: 
+    0 8px 18px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* Active Nav Border Indicator */
+.active-nav-link {
+  color: var(--gold-primary) !important;
+  border-bottom: 2px solid var(--gold-primary) !important;
+}
+
+/* Line clamps */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile drawer glass */
+#mobile-drawer {
+  background: rgba(14, 11, 9, 0.96);
+  backdrop-filter: blur(16px);
+}
+
+/* ==========================================================================
+   AI HELP & ORACLE STYLING
+   ========================================================================== */
+
+/* Prompt chip */
+.prompt-chip {
+  background: #1e1713;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #cfc4ad;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: var(--font-serif);
+  font-size: 11px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.35;
+}
+
+.prompt-chip:hover {
+  background: #2a201a;
+  color: #f5eedc;
+  border-color: var(--gold-primary);
+  transform: translateX(3px);
+}
+
+/* Blind date wrapped parcel */
+.blind-date-parcel {
+  background: radial-gradient(circle at 50% 50%, #2e2017 0%, #17110d 100%);
+  border: 2px dashed rgba(212, 175, 55, 0.45);
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.7),
+    inset 0 0 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.blind-date-parcel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 14px;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #8c733e, #d4af37, #8c733e);
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  opacity: 0.7;
+}
+
+.blind-date-parcel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 14px;
+  transform: translateY(-50%);
+  background: linear-gradient(to bottom, #8c733e, #d4af37, #8c733e);
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  opacity: 0.7;
+}
+
+.blind-date-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #a5202e 0%, #611019 75%, #36070c 100%);
+  border: 2px solid rgba(212, 175, 55, 0.8);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.8), inset 0 2px 4px rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Literary duel card */
+.duel-vs-badge {
+  background: radial-gradient(circle, #d4af37 0%, #8c733e 100%);
+  color: #120d0b;
+  font-family: var(--font-display);
+  font-weight: 900;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* AI Sub-tab active styles */
+.ai-subtab-btn.active {
+  background-color: #2b1f17;
+  color: #d4af37;
+  border-color: #d4af37;
+}
+
